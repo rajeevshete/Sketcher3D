@@ -7,18 +7,18 @@
 
 class GEOMETRY3D_API Shape
 {
-protected:
-    std::string name_;
+private:
+    std::string mName;
 
 public:
     Shape(const std::string& name);
     virtual ~Shape() = default;
 
-    std::string getName() const { return name_; }
+    const std::string getName() const;
 
-    virtual std::vector<Point> getCoordinates() const = 0;
+    virtual const std::vector<Point> getCoordinates() const = 0;
 
-    virtual void write(std::ostream& os) const = 0;
+    virtual void save(std::ostream& os) const = 0;
 
-    virtual void writeForGnu(std::ostream& os) const = 0;
+    virtual void saveForGnu(std::ostream& os) const = 0;
 };
